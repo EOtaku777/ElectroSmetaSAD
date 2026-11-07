@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ЭлектроСмета — расчёт электрики в квартире</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="bolt" aria-hidden="true"></span>ЭлектроСмета</div>
+  <input id="projName" class="proj-name" value="Моя квартира" aria-label="Название проекта" maxlength="80">
+  <div class="actions">
+    <button class="btn ghost" id="btnSample">Загрузить пример</button>
+    <button class="btn ghost" id="btnClear">Очистить</button>
+    <button class="btn ghost" id="btnSave">Сохранить</button>
+    <button class="btn primary" id="btnCalc">Рассчитать</button>
+    <button class="btn primary outline" id="btnEstimate" disabled>Смета</button>
+  </div>
+</header>
+
+<main class="workspace">
+  <aside class="tools" aria-label="Инструменты">
+    <h2>Инструменты</h2>
+    <div class="tool-list" id="toolList"></div>
+    <h2>Приборы на отдельную линию</h2>
+    <div class="tool-list" id="applLine"></div>
+    <h2>Приборы в розетку</h2>
+    <div class="tool-list" id="applPlug"></div>
+    <h2>Параметры квартиры</h2>
+    <div class="settings">
+      <label>Высота потолков, м <input type="number" id="sCeil" min="2" max="5" step="0.1" value="2.7"></label>
+      <label>Высота щита, м <input type="number" id="sPanelH" min="0.5" max="2.2" step="0.1" value="1.6"></label>
+      <label>Ввод
+        <select id="sPhases"><option value="1">1 фаза, 220 В</option><option value="3">3 фазы, 380 В</option></select>
+      </label>
+      <label>Выделенная мощность, кВт <input type="number" id="sAllowed" min="0" max="100" step="0.5" value="15"></label>
+    </div>
+  </aside>
+
+  <section class="stage">
+    <div class="stage-bar">
+      <span id="stageHint" class="hint"></span>
+      <label class="check"><input type="checkbox" id="showRoutes" checked> Показать трассы кабеля</label>
+    </div>
+    <div class="plan-wrap">
+      <svg id="plan" viewBox="0 0 16 11" role="img" aria-label="План квартиры"></svg>
+      <div id="stale" class="stale" hidden>План изменён — нажмите «Рассчитать», чтобы обновить результат</div>
+      <div id="empty" class="empty">
+        <strong>Начните с плана</strong>
+        <span>Выберите «Комната» и протяните прямоугольник мышью, затем расставьте розетки и приборы.</span>
+        <span>Или загрузите готовый пример — и сразу увидите расчёт.</span>
+      </div>
+    </div>
+  </section>
+
+  <aside class="inspector" id="inspector" aria-label="Свойства"></aside>
+</main>
+
+<section id="results" class="results" hidden>
+  <div class="tabbar no-print" role="tablist">
+    <button role="tab" data-tab="lines" class="active">Линии и автоматы</button>
+    <button role="tab" data-tab="panel">Электрощит</button>
+    <button role="tab" data-tab="estimate">Смета</button>
+  </div>
+  <div id="cards" class="cards"></div>
+  <div id="warnings" class="warnings"></div>
+  <div class="pane active" id="pane-lines"></div>
+  <div class="pane" id="pane-panel"></div>
+  <div class="pane" id="pane-estimate"></div>
+  <div id="notes" class="notes no-print"></div>
+</section>
+
+<div id="toast" class="toast" role="status" hidden></div>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

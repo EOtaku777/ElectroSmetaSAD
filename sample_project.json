@@ -1,0 +1,37 @@
+{
+  "name": "Пример: 3-комнатная квартира",
+  "settings": {"ceiling_h": 2.7, "panel_h": 1.6, "phases": 3, "allowed_kw": 20},
+  "rooms": [
+    {"id": "r1", "name": "Прихожая", "type": "hall", "x": 0, "y": 0, "w": 3, "h": 4},
+    {"id": "r2", "name": "Кухня", "type": "kitchen", "x": 3, "y": 0, "w": 4, "h": 3.5},
+    {"id": "r3", "name": "Гостиная", "type": "living", "x": 7, "y": 0, "w": 5, "h": 5},
+    {"id": "r4", "name": "Спальня", "type": "bedroom", "x": 0, "y": 4, "w": 4, "h": 4},
+    {"id": "r5", "name": "Ванная", "type": "bathroom", "x": 4, "y": 3.5, "w": 3, "h": 2.5},
+    {"id": "r6", "name": "Санузел", "type": "toilet", "x": 4, "y": 6, "w": 1.5, "h": 2}
+  ],
+  "panel": {"x": 0.3, "y": 1.0},
+  "items": [
+    {"id": "a1", "kind": "light", "x": 1.5, "y": 2.0}, {"id": "a2", "kind": "switch", "x": 2.7, "y": 0.4},
+    {"id": "a3", "kind": "socket", "x": 0.4, "y": 3.5},
+    {"id": "b1", "kind": "light", "x": 5, "y": 1.7}, {"id": "b2", "kind": "light", "x": 4.2, "y": 1.7}, {"id": "b3", "kind": "switch", "x": 3.2, "y": 0.5},
+    {"id": "b4", "kind": "socket", "x": 3.5, "y": 0.2}, {"id": "b5", "kind": "socket", "x": 4.5, "y": 0.2}, {"id": "b6", "kind": "socket", "x": 6.5, "y": 1.5},
+    {"id": "b7", "kind": "appliance", "appliance": "fridge", "x": 6.7, "y": 0.4},
+    {"id": "b8", "kind": "appliance", "appliance": "kettle", "x": 5.5, "y": 0.2},
+    {"id": "b9", "kind": "appliance", "appliance": "microwave", "x": 4.0, "y": 0.2},
+    {"id": "b10", "kind": "appliance", "appliance": "dishwasher", "x": 6.0, "y": 3.2},
+    {"id": "b11", "kind": "appliance", "appliance": "hob", "x": 3.6, "y": 3.2},
+    {"id": "b12", "kind": "appliance", "appliance": "oven", "x": 3.3, "y": 3.2},
+    {"id": "c1", "kind": "light", "x": 8.5, "y": 2.5}, {"id": "c2", "kind": "light", "x": 10.5, "y": 2.5}, {"id": "c3", "kind": "switch", "x": 7.2, "y": 0.4},
+    {"id": "c4", "kind": "socket", "x": 8, "y": 0.3}, {"id": "c5", "kind": "socket", "x": 11.5, "y": 0.3}, {"id": "c6", "kind": "socket", "x": 11.7, "y": 3},
+    {"id": "c7", "kind": "socket", "x": 7.3, "y": 4.7}, {"id": "c8", "kind": "appliance", "appliance": "tv", "x": 9.5, "y": 4.8},
+    {"id": "c9", "kind": "appliance", "appliance": "ac", "x": 11.8, "y": 1.5},
+    {"id": "d1", "kind": "light", "x": 2, "y": 6}, {"id": "d2", "kind": "switch", "x": 0.4, "y": 4.4},
+    {"id": "d3", "kind": "socket", "x": 0.5, "y": 6}, {"id": "d4", "kind": "socket", "x": 3.5, "y": 6}, {"id": "d5", "kind": "socket", "x": 2, "y": 7.7},
+    {"id": "d6", "kind": "appliance", "appliance": "pc", "x": 3.6, "y": 7.6},
+    {"id": "e1", "kind": "light", "x": 5.5, "y": 4.7}, {"id": "e2", "kind": "switch", "x": 4.3, "y": 3.8},
+    {"id": "e3", "kind": "socket", "x": 6.7, "y": 4.2}, {"id": "e4", "kind": "appliance", "appliance": "washer", "x": 6.7, "y": 5.6},
+    {"id": "e5", "kind": "appliance", "appliance": "boiler", "x": 4.3, "y": 5.5},
+    {"id": "e6", "kind": "appliance", "appliance": "floor", "x": 5.5, "y": 5.4, "value": 3.5},
+    {"id": "f1", "kind": "light", "x": 4.75, "y": 7}, {"id": "f2", "kind": "switch", "x": 4.2, "y": 6.2}
+  ]
+}
